@@ -57,7 +57,9 @@ function saludo(idioma) {
   }   else if (idioma === "ingles") {
     return "Hello!";    
   } 
-  else { return "Hola"  ;  
+  else  { 
+    
+    return "Hola!"  ;  
   }
 }
 
@@ -123,7 +125,10 @@ function esEntero(numero) {
    else if (numero < 0 && numero >= Math.floor(numero)  ) {
    return true;
    }
-   else return false;
+   else if (numero != 0 ){ 
+    return false; }
+  
+   else if (numero === 0){return true;}
 }
 
 function fizzBuzz(numero) {
@@ -141,6 +146,7 @@ function fizzBuzz(numero) {
   else if((numero % 5) === 0){
     return "buzz";
   }
+  else return numero; 
    
 }
 
@@ -151,8 +157,12 @@ function operadoresLogicos(num1, num2, num3) {
   //Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
-  if (num1 > 0 && num2 > 0 && num3 > 0 ) {
-    if (num1 > num2 && num1 > num3 ){
+  if (num1 === 0 || num2===0 || num3===0 ){ return "Error";}
+  else if (num1<0 || num2<0 || num3<0){
+    return "Hay negativos";
+  }
+  else if (num1 > 0 && num2 > 0 && num3 > 0 ) {
+    if (num1 > 0 && num1 > num2 && num1 > num3 ){
       return "Número 1 es mayor y positivo";
     }
     else if (num3 > num1 && num3 >num2){
@@ -161,12 +171,8 @@ function operadoresLogicos(num1, num2, num3) {
       }
     }
   }
-  else if (num1 < 0 && num2 < 0 && num3 < 0){
-    return "Hay negativos";
-  }
-  else if (num1 === 0){ return "Error";}
-  else return false;
 
+  return false;
 }
 
 function esPrimo(numero) {
@@ -205,24 +211,36 @@ function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí   
-  let tabla6 = [];
-  for (let i = 0; i <= 10; i++) {
-    tabla6.push(6*i);
+  // let tabla6 = [];
+  // for (let i = 0; i <= 10; i++) {
+  //   tabla6.push(6*i);
      
-  }
-  return tabla6;
+  // }
+  // return tabla6;
+  let element =[];
+  for (let i = 0; i <= 10; i++) {
+    element.push(6*i);
+  }return element;
 }
-
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-  
+  if (numero >99 && numero <1000){
+  return true;
+  }else return false;
 }
 
 function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
+  var i=0;
+  do{
+    numero = numero+5;
+    i++;
+  }
+  while (i < 8) {  
+  }; return numero;
 }
 
 
