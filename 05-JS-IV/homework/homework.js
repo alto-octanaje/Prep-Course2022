@@ -6,12 +6,13 @@ function crearGato (nombre, edad) {
   // Agrega un método (funcion) llamado "meow" que devuelva el string "Meow!"
   // Devuelve el objeto
   // Tu código:
-  const odjeto={
+  const objeto ={
     nombre: nombre,
     edad: edad,
-    meow: function (){"Meow!";}
-  } 
-  return odjeto;
+    meow: function (){
+      return "Meow!";}
+  } ;
+  return objeto;
 }
  
 
@@ -92,7 +93,7 @@ function verificarPassword (usuario, password) {
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // Tu código:
-  if(usuario[password]=== password){
+  if(usuario.password=== password){
     return true;
   }
   else return false;
@@ -138,10 +139,11 @@ function sumarLikesDeUsuario (usuario) {
   // Suma todos los likes de todos los objetos "post"
   // Devuelve la suma
   // Tu código:
-  var x = 0;
-  usuario.posts.forEach(post => {
+  let x=0;
+  usuario.posts.forEach((post) => {
     x = x + post.likes;
   })
+  return x;
 }
 
 function agregarMetodoCalculoDescuento (producto) {
@@ -154,14 +156,10 @@ function agregarMetodoCalculoDescuento (producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
-  var x=0;
-  producto.forEach(producto =>{
-    x = producto.precio - (producto.precion *producto.porcentajeDeDescuento);
-    
-  }
-    )
-  return x , producto;
-
+  producto.calcularPrecioDescuento= function() {
+    return producto.precio-(producto.precio * producto.porcentajeDeDescuento);
+  };
+  return producto;
 }
 
 // No modificar nada debajo de esta línea
